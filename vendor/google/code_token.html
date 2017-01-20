@@ -1,0 +1,16 @@
+<script>
+	var GA_TOKEN;
+	var tracers = TRACERS_JSON;
+	tracers.forEach(function(tracer) {
+		var matched = true
+			&& (!tracer.host || tracer.host == window.location.host)
+			&& (!tracer.protocol || tracer.protocol == window.location.protocol)
+			&& (!tracer.port || tracer.port == window.location.port)
+			&& (!tracer.path || tracer.path == window.location.path.substr(0, tracer.path.length))
+			;
+
+		if (matched) {
+			GA_TOKEN = tracer.token;
+		}
+	});
+</script>
