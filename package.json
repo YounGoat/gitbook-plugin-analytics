@@ -1,6 +1,6 @@
 {
     "name": "gitbook-plugin-analytics",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "GitBook plugin for analytics (e.g. Google Analytics) purpose",
     "main": "index.js",
     "scripts": {

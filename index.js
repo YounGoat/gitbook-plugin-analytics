@@ -57,23 +57,27 @@ function pushTracer(vendor, options) {
 module.exports = {
     // Map of hooks
     hooks: {
-		"init": function() {
-			var config = this.config.get('pluginsConfig.analytics');
+		"init": (function() {
+			var haveRun = false;
+			return function() {
+				if (haveRun) return;
+				haveRun = true;
 
-			vendors.forEach(function(vendor) {
-				if (config[vendor]) {
-					pushTracer(vendor, config[vendor]);
-				}
-			});
+				var config = this.config.get('pluginsConfig.analytics');
 
-			if (config instanceof Array) {
-				config.forEach(function(options) {
-					pushTracer(options);
+				vendors.forEach(function(vendor) {
+					if (config[vendor]) {
+						pushTracer(vendor, config[vendor]);
+					}
 				});
-			}
 
-			console.log(tracers);
-		},
+				if (config instanceof Array) {
+					config.forEach(function(options) {
+						pushTracer(options);
+					});
+				}
+			}
+		})(),
 
 		"page": function(page) {
 			for (var vendor in tracers) {
