@@ -1,4 +1,3 @@
-<script>
 if (BAIDU_TONGJI_TOKEN) {
 	var _hmt = _hmt || [];
 	(function() {
@@ -8,4 +7,3 @@ if (BAIDU_TONGJI_TOKEN) {
 	  s.parentNode.insertBefore(hm, s);
 	})();
 }
-</script>

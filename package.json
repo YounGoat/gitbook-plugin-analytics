@@ -1,29 +1,29 @@
 {
-    "name": "gitbook-plugin-analytics",
-    "version": "0.0.3",
-    "description": "GitBook plugin for analytics (e.g. Google Analytics) purpose",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/YounGoat/gitbook-plugin-analytics.git"
-    },
-    "keywords": [
-        "gitbook",
-        "analytics"
-    ],
-    "author": "youngoat@163.com",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/YounGoat/gitbook-plugin-analytics/issues"
-    },
-    "homepage": "https://github.com/YounGoat/gitbook-plugin-analytics#readme",
-    "engines": {
-        "gitbook": ">=3.x.x"
-    },
-    "gitbook": {
-        "properties": {}
-    }
+	"name": "gitbook-plugin-analytics",
+	"version": "0.1.0",
+	"description": "GitBook plugin for analytics (e.g. Google Analytics) purpose",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/YounGoat/gitbook-plugin-analytics.git"
+	},
+	"keywords": [
+		"gitbook",
+		"analytics"
+	],
+	"author": "youngoat@163.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/YounGoat/gitbook-plugin-analytics/issues"
+	},
+	"homepage": "https://github.com/YounGoat/gitbook-plugin-analytics#readme",
+	"engines": {
+		"gitbook": ">=3.x.x"
+	},
+	"gitbook": {
+		"properties": {}
+	}
 }
