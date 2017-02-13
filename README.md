@@ -65,7 +65,7 @@ gitbook build
 gitbook serve
 ```
 
-##	How to config?
+##	Advanced Configs
 
 As the previous section described, it's so easy to active [Google Analytics](https://analytics.google.com) or [Baidu Tongji](http://tongji.baidu.com) by adding responding tokens in ``pluginsConfig``.
 
