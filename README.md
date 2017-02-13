@@ -9,7 +9,8 @@ THE PLUGIN is compitable with gitbook >= 3.x.x. If the gitbook engine you instal
 ```bash
 # ...
 info: load plugin gitbook-plugin-analytics ....ERROR
-# ...ior: Error loading plugins: gitbook-plugin-analytics. Run 'gitbook install' to install plugins from NPM.
+# ...
+Error: Error loading plugins: gitbook-plugin-analytics. Run 'gitbook install' to install plugins from NPM.
 ```
 
 Stop trying to run ``gitbook install`` again and again, it's vain.
