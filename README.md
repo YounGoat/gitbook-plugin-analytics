@@ -1,33 +1,6 @@
 #	GitBook Plugin Analytics
 
-ATTENTION: Gitbook project config file *book.json* is JSON format, in which no comment is allowed. So, the C-style comments in example configs should be deleted in real config file.
-
-##	Before we start
-
-THE PLUGIN is compitable with gitbook >= 3.x.x. If the gitbook engine you installed is an older one, THE PLUGIN does not work, and the next message will be printed in console when you build or serve your book:
-
-```bash
-# ...
-info: load plugin gitbook-plugin-analytics ....ERROR
-# ...
-Error: Error loading plugins: gitbook-plugin-analytics. Run 'gitbook install' to install plugins from NPM.
-```
-
-Stop trying to run ``gitbook install`` again and again, it's vain.
-
-__DO NOT know what is the current version of gitbook?__ Run the next command to see:
-
-```bash
-# List installed versions of gitbook engine.
-gitbook verions
-# One or more versions will be listed row by row.
-# The one prefixed with * is the currrent version.
-
-# Force install specific version of gitbook engine if necessary.
-gitbook versions:install 3.2.2
-```
-
-##	How to run?
+##	Get Started
 
 Firstly, edit *book.json* which should be located at the root dir of a gitbook. If it does not exist, create it!
 
@@ -295,4 +268,31 @@ In these cases, *vendor* and *token* can also be expressed with an array. e.g.
 		}
 	}
 }
+```
+
+##	Before we start
+
+ATTENTION: Gitbook project config file *book.json* is JSON format, in which no comment is allowed. So, the C-style comments in example configs should be deleted in real config file.
+
+THE PLUGIN is compitable with gitbook >= 3.x.x. If the gitbook engine you installed is an older one, THE PLUGIN does not work, and the next message will be printed in console when you build or serve your book:
+
+```bash
+# ...
+info: load plugin gitbook-plugin-analytics ....ERROR
+# ...
+Error: Error loading plugins: gitbook-plugin-analytics. Run 'gitbook install' to install plugins from NPM.
+```
+
+Stop trying to run ``gitbook install`` again and again, it's vain.
+
+__DO NOT know what is the current version of gitbook?__ Run the next command to see:
+
+```bash
+# List installed versions of gitbook engine.
+gitbook verions
+# One or more versions will be listed row by row.
+# The one prefixed with * is the currrent version.
+
+# Force install specific version of gitbook engine if necessary.
+gitbook versions:install 3.2.2
 ```
