@@ -1,5 +1,7 @@
 #	GitBook Plugin Analytics
 
+[![NPM](https://nodei.co/npm/gitbook-plugin-analytics.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gitbook-plugin-analytics)
+
 ##	Get Started
 
 Firstly, edit *book.json* which should be located at the root dir of a gitbook. If it does not exist, create it!
