@@ -12,7 +12,7 @@ var mod = function(tracers) {
 	else {
 		jscode = CODE_TOKEN.replace('TRACERS_JSON', JSON.stringify(tracers)) + CODE;
 	}
-	return '<script>' + jscode + '</' + 'script>';
+	return jscode;
 };
 
 module.exports = mod;
