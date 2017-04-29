@@ -2,12 +2,12 @@ var MODULE_REQUIRE
 	/* built-in */
 
 	/* NPM */
-	, colors = require('colors')
+	
 	/* in-package */
 	;
 
 function print(msg) {
-	console.log(colors.green('[ analytics ] ') + msg);
+	console.log('[ analytics ] ' + msg);
 };
 
 module.exports = {
@@ -16,11 +16,13 @@ module.exports = {
 	},
 
 	warn: function(msg) {
-		print(colors.yellow(msg));
+		print('WARN');
+		print(msg);
 	},
 
 	error: function(msg) {
-		print(colors.red(msg));
+		print('EXCEPTION FOUND')
+		print(msg);
 		print('We are so sorry that gitbook ceased forcely.');
 		process.exit(1);
 	}

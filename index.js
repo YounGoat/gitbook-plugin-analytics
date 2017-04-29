@@ -1,5 +1,7 @@
 var MODULE_REQUIRE
 	/* built-in */
+	, fs = require('fs')
+	, path = require('path')
 	, url = require('url')
 	/* NPM */
 	// , md = require('markdown-it')()
@@ -44,6 +46,8 @@ var _vendorGroups_ = {};
 
 // Container to put context configs.
 var _contexts_ = {};
+
+var _book_;
 
 function processContext(options) {
 	// Just to simplify the related statements.
@@ -242,7 +246,11 @@ function processContext(options) {
 module.exports = {
     // Map of hooks
     hooks: {
-		'init': function() { try {
+		'init': function() {
+			try {
+
+			_book_ = this;
+
 			// Reset the container.
 			// This is useful under ``gitbook serve``.
 			_contexts_ = {};
@@ -261,7 +269,7 @@ module.exports = {
 					}
 
 					if (!(vendorList instanceof Array)) {
-						utils.error('Predefined vendor (group) named "' + name + '" is invalid.')
+						utils.error('Predefined vendor (group) named expected: ' + name)
 					}
 
 					for (var i = 0; i < vendorList.length; i++) {
@@ -276,7 +284,7 @@ module.exports = {
 							vendorList[i] = { vendor: vendorList[i] };
 						}
 						else {
-							utils.error('Predefined vendor (group) named "' + name + '" is invalid.');
+							utils.error('Predefined vendor (group) named expected: ' + name);
 						}
 					}
 
@@ -323,7 +331,7 @@ module.exports = {
 						processContext(options);
 					}
 					else {
-						utils.error('"' + keyname + '" is regarded as base value, and the value if invalid.');
+						utils.error('URL base expected: ' + keyname);
 					}
 				}
 			}
@@ -333,22 +341,31 @@ module.exports = {
 					utils.log('VENDOR: ' + vendor + ', CONTEXT: ' + JSON.stringify(context));
 				});
 			}
-		}catch(ex) { console.log(ex.stack)}
+
+			var tracingJs = '';
+			for (var vendor in _contexts_) {
+				var render = require('./vendor/' + vendor);
+				tracingJs += render(_contexts_[vendor]);
+			}
+
+			var jspath = path.join(this.output.root(), '_gitbook_plugin_analytics.js');
+			fs.writeFileSync(jspath, tracingJs);
+
+		} catch(ex) { console.log(ex.stack) }
 		},
 
 		'page': function(page) {
-			for (var vendor in _contexts_) {
-				var render = require('./vendor/' + vendor);
-				page.content += render(_contexts_[vendor]);
-			}
+			var n = page.path.split(path.sep).length - 1;
+			var src = '../'.repeat(n) + '_gitbook_plugin_analytics.js';
+			page.content += '<script src="' + src + '"></' + 'script>';
 			return page;
 		}
 	},
 
-    // Map of new blocks
+	// Map of new blocks
     blocks: {
 	},
 
-    // Map of new filters
-    filters: {}
+	// Map of new filters
+	filters: {}
 };
