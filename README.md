@@ -1,4 +1,5 @@
 #	GitBook Plugin Analytics
+__GitBook plugin for analytics (e.g. Google Analytics) purpose.__
 
 [![NPM](https://nodei.co/npm/gitbook-plugin-analytics.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gitbook-plugin-analytics)
 
@@ -12,6 +13,7 @@
 	*	[Example 3, Simplify The Config, Extracting Bases](#config-extracting-bases)
 	*	[Example 4, Simplify The Config, Predefining Vendors](#config-predefining-vendors)
 *	[Before We Start](#prepare)
+*	[Recommendations](#recommendations)
 
 ##	Links
 
@@ -324,3 +326,7 @@ gitbook verions
 # Force install specific version of gitbook engine if necessary.
 gitbook versions:install 3.2.2
 ```
+
+##	Recommendations
+
+*	[gitbook-serve](https://www.npmjs.com/package/gitbook-serve)
